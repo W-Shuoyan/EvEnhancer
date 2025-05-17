@@ -1,0 +1,10 @@
+__pychache__/
+*.pyc
+experiments/
+.DS_Store
+.eggs/
+results/
+*egg-info/
+pretrained_models/
+tools_PRIVATE/
+tb_logger/

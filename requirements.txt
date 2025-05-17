@@ -1,0 +1,16 @@
+addict
+future
+lmdb
+numpy==1.22.4
+opencv-python
+Pillow
+pyyaml
+requests
+scikit-image
+scipy
+tb-nightly
+torch==1.10.1+cu111
+torchvision==0.11.2+cu111
+tqdm
+yapf
+einops

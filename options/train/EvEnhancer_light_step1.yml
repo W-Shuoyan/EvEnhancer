@@ -1,0 +1,124 @@
+# general settings
+name: EvEnhancer_light_step1
+model_type: EvEnhancer_model
+num_gpu: 1
+manual_seed: 10
+
+
+# dataset and data loader settings
+datasets:
+  train:
+    name: Adobe240
+    type: Adobe240_train_Dataset
+    dataroot: /opt/data/private/wsy/Datasets/Adobe240_event/frame
+
+
+    # interpolation settings
+    num_skip_interpolation: 7 # m
+    num_inter_interpolation: 7 # n
+    moment_events: 5
+
+    # super-resolution settings
+    scale_min: 4
+    scale_max: 4
+    
+    # augment
+    lq_size:
+      - 32
+      - 32
+
+    io_backend:
+      type: disk
+
+    # data loader settings
+    use_shuffle: true
+    num_worker_per_gpu: 8
+    batch_size_per_gpu: 2
+    dataset_enlarge_ratio: 1
+    prefetch_mode: cuda
+    pin_memory: true
+
+  val:
+    name: Adobe240
+    type: AdobeGopro_val_Dataset
+
+    dataroot: /opt/data/private/wsy/Datasets/Adobe240_event/frame
+
+    # interpolation settings
+    num_skip_interpolation: 7 # m
+    num_inter_interpolation: 7 # n
+    moment_events: 5
+
+    # super-resolution settings
+    scale_min: 4
+    scale_max: 4
+    
+    lq_size:
+      - 180
+      - 320
+
+    io_backend:
+      type: disk
+
+
+# network structures
+network_g:
+  type: EvEnhancerArch
+  event_channels: 2
+  channels: 3
+  n_feats: 64
+  front_RBs: 5
+  base_dim: 16
+  head: 8
+  r: 1
+  r_t: 1
+
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+  training_states: ~
+  root: /opt/data/private/wsy/EvEnhancer
+
+# training settings
+train:
+  optim_g:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [0.9, 0.999]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [150000, 150000, 150000]
+    restart_weights: [1, 1, 1]
+    eta_min: !!float 1e-7
+
+  total_iter: 450000
+  warmup_iter: -1 # no warm up
+
+  # losses
+  pixel_opt:
+    type: CharbonnierLoss
+    loss_weight: 1
+    eps: !!float 1e-6
+
+# validation settings
+val:
+  val_freq: !!float 3e4
+  save_img: true
+  save_gt: false
+  cal_metrics: true
+  
+# logging settings
+logger:
+  print_freq: !!float 1e2
+  save_checkpoint_freq: !!float 3e4
+  use_tb_logger: true
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
