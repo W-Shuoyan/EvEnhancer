@@ -1,6 +1,6 @@
 # EvEnhancer: Empowering Effectiveness, Efficiency and Generalizability for Continuous Space-Time Video Super-Resolution with Events (CVPR 2025, Highlight)
 
-**Authors**: [Shuoyan Wei](https://github.com/W-Shuoyan)<sup>1</sup>, [Feng Li](https://lifengcs.github.io/)<sup>2,\*</sup>, [Shengeng Tang](https://tangshengeng.github.io/)<sup>2</sup>, [Yao Zhao](https://scholar.google.com/citations?user=474TbQYAAAAJ&hl=en&oi=ao)<sup>1</sup>,[Huihui Bai](https://scholar.google.com/citations?user=iXuCUcQAAAAJ&hl=en&oi=ao)<sup>1,\*</sup>
+**Authors**: [Shuoyan Wei](https://github.com/W-Shuoyan)<sup>1</sup>, [Feng Li](https://lifengcs.github.io/)<sup>2,\*</sup>, [Shengeng Tang](https://tangshengeng.github.io/)<sup>2</sup>, [Yao Zhao](https://scholar.google.com/citations?user=474TbQYAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Huihui Bai](https://scholar.google.com/citations?user=iXuCUcQAAAAJ&hl=en&oi=ao)<sup>1,\*</sup>
 
 <sup>1</sup>*Beijing Jiaotong University*， <sup>2</sup>*Hefei University of Technology*
 
@@ -131,24 +131,14 @@ python basicsr/train.py -opt options/train/EvEnhancer_step2.yml
 
 ### Evaluation
 
-- **Example 1:** temporal scale `t=4`, spatial scale `s=4`
+- **A demo example :** temporal scale `t=8`, spatial scale `s=4`
 
 ```shell
-# GoPro dataset
+# GoPro dataset (demo)
 # EvEnhancer-light
-python basicsr/test.py -opt options/test/EvEnhancer_light_GoPro_T8S4.yml 
+python basicsr/test.py -opt options/test/EvEnhancer_light_GoPro_demo_T8S4.yml
 # EvEnhancer
-python basicsr/test.py -opt options/test/EvEnhancer_GoPro_T8S4.yml
-```
-
-- **Example 2:** temporal scale `t=6`, spatial scale `s=4`
-
-```shell
-# BS-EGRB dataset
-# EvEnhancer-light
-python basicsr/test.py -opt options/test/EvEnhancer_light_BS-ERGB_T6S4.yml
-# EvEnhancer
-python basicsr/test.py -opt options/test/EvEnhancer_BS-ERGB_T6S4.yml
+python basicsr/test.py -opt options/test/EvEnhancer_GoPro_demo_T8S4.yml
 ```
 
 ### Pretrained Model

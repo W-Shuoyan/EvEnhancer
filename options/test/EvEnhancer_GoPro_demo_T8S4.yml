@@ -1,0 +1,60 @@
+# general settings
+name: EvEnhancer_GoPro_demo_T8S4
+model_type: EvEnhancer_model
+num_gpu: 1
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+  val:
+    name: GoPro
+    type: AdobeGopro_test_Dataset
+
+    dataroot: demo/GoPro
+
+    # interpolation settings
+    num_skip_interpolation: 7 # m
+    num_inter_interpolation: 7 # n
+    moment_events: 7
+
+    # super-resolution settings
+    scale_min: 4
+    scale_max: 4
+    
+    lq_size:
+      - 180
+      - 320
+
+    io_backend:
+      type: disk
+
+
+# network structures
+network_g:
+  type: EvEnhancerArch
+  event_channels: 2
+  channels: 3
+  n_feats: 64
+  front_RBs: 5
+  base_dim: 64
+  head: 8
+  r: 1
+  r_t: 1
+
+
+# path
+path:
+  pretrain_network_g: pretrained_models/EvEnhancer/net_g_latest.pth
+  strict_load_g: true
+  root: /opt/data/private/wsy/EvEnhancer
+
+# validation settings
+val:
+  # val_step: 1
+  save_img: true
+  save_gt: false
+  cal_metrics: true
+
+# tile: # use the tile mode for limited GPU memory when testing.
+#   tile_size: 128 # the higher, the more utilized GPU memory and the less performance change against the full image. must be an integer multiple of the window size.
+#   tile_pad: 32 # overlapping between adjacency patches.must be an integer multiple of the window size.
