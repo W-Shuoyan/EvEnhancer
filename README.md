@@ -152,10 +152,11 @@ python basicsr/test.py -opt options/test/EvEnhancer_GoPro_demo_T8S4.yml
 If you find this work useful for your research, please consider citing our paper~ 😎
 
 ```shell
-@article{wei2025evenhancer,
+@inproceedings{wei2025evenhancer,
   title={EvEnhancer: Empowering Effectiveness, Efficiency and Generalizability for Continuous Space-Time Video Super-Resolution with Events},
   author={Wei, Shuoyan and Li, Feng and Tang, Shengeng and Zhao, Yao and Bai, Huihui},
-  journal={arXiv preprint arXiv:2505.04657},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={17755--17766},
   year={2025}
 }
 ```
