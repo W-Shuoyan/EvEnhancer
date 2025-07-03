@@ -83,7 +83,7 @@ Cn = random.gauss(config['mu'], config['sigma']) * Cp
 Cp = min(max(Cp, config['min_CT']), config['max_CT'])
 Cn = min(max(Cn, config['min_CT']), config['max_CT'])
 
-esim = esim_torch.ESIM(Cn, Cp, config['refractory_period'])
+esim = esim_torch.ESIM(Cn, Cp, config['refractory_period']* 1e9)
 ```
 
 \** The Adobe240 dataset split follows the setting of `Preparing Dataset` in [VideoINR](https://github.com/Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution#preparing-dataset).
