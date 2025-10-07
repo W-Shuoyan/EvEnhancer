@@ -27,11 +27,14 @@ This repository contains the reference code for the paper "[**EvEnhancer: Empowe
 
 ## 🔈News
 
-- ✅ **[May 2025]** The source code is now available 👉 [![GitHub Stars](https://img.shields.io/github/stars/W-Shuoyan/EvEnhancer?style=social)](https://github.com/W-Shuoyan/EvEnhancer)
-- ✅ **[May 2025]** The arXiv version of our paper has been released 👉 [![arXiv](https://img.shields.io/badge/arXiv-2505.04657-da282a)](https://arxiv.org/abs/2505.04657)
-- ✅ **[Apr 2025]** 🎉Our paper is selected to be presented as a **Highlight** in CVPR 2025!
-- ✅ **[Mar 2025]** A demo video for our paper has been released 👉 [![YouTube Video Views](https://img.shields.io/youtube/views/GenHXBxqXsc)](https://youtu.be/GenHXBxqXsc)
-- ✅ **[Feb 2025]** 🎉Our paper is accepted to **CVPR 2025**!
+- 🌟 **[Oct 2025]** The extended version of our work, [**EvEnhancerPlus**](https://arxiv.org/pdf/2510.03833), has been released 👉 [![arXiv](https://img.shields.io/badge/arXiv-2510.03833-da282a)](https://arxiv.org/abs/2510.03833)
+
+  This version introduces a controllable switching mechanism (CSM) that enables achieving **better performance with lower computational cost**. Also, the extended paper provides more refined technical details and a clearer methodological explanation. Welcome to read and reference it! 
+- ✅ [May 2025] The source code is now available 👉 [![GitHub Stars](https://img.shields.io/github/stars/W-Shuoyan/EvEnhancer?style=social)](https://github.com/W-Shuoyan/EvEnhancer)
+- ✅ [May 2025] The arXiv version of our paper has been released 👉 [![arXiv](https://img.shields.io/badge/arXiv-2505.04657-da282a)](https://arxiv.org/abs/2505.04657)
+- ✅ [Apr 2025] 🎉Our paper is selected to be presented as a **Highlight** in CVPR 2025!
+- ✅ [Mar 2025] A demo video for our paper has been released 👉 [![YouTube Video Views](https://img.shields.io/youtube/views/GenHXBxqXsc)](https://youtu.be/GenHXBxqXsc)
+- ✅ [Feb 2025] 🎉Our paper is accepted to **CVPR 2025**!
 
 ## 📚 Installation
 
